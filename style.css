@@ -5,3 +5,36 @@
   margin: 0;
   padding: 0;
 }
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+header {
+  height: 17vh;
+  background-origin:padding-box;
+  background-image: url('/images/banner.png');
+  background-size: cover;
+  background-repeat: no-repeat; 
+  background-color: #0E0E0E;
+  color: white;
+}
+
+.container {
+  display: flex;
+  height: inherit;
+  margin: 0 auto;
+  width: 90%;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
