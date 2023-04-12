@@ -42,23 +42,17 @@ header {
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  border: 1px solid red;
   margin: 0 auto;
 }
 
-/* .form-container {
-  width: 100%;
-  margin: 0 auto;
-}
+
 
 form {
-  border: 1px solid red;
-  display: inline-block;
+  display: flex;
   margin-top: -25px;
 }
 
 form input {
-  max-width: 550px;
   padding: 1em 0;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
@@ -69,4 +63,4 @@ form button {
   padding: 0 3.5em;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
-} */
+} 
