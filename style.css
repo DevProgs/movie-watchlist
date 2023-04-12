@@ -15,6 +15,12 @@ img {
   width: 100%;
 }
 
+.container {
+  width: 90%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
 header {
   height: 17vh;
   background-origin:padding-box;
@@ -25,7 +31,7 @@ header {
   color: white;
 }
 
-.container {
+.flex {
   display: flex;
   height: inherit;
   margin: 0 auto;
@@ -34,6 +40,33 @@ header {
 .header-content {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   width: 100%;
+  border: 1px solid red;
+  margin: 0 auto;
 }
+
+/* .form-container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+form {
+  border: 1px solid red;
+  display: inline-block;
+  margin-top: -25px;
+}
+
+form input {
+  max-width: 550px;
+  padding: 1em 0;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  flex-grow: 1;
+}
+
+form button {
+  padding: 0 3.5em;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+} */
