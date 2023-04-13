@@ -39,7 +39,8 @@ header {
 
 .banner,
 .container,
-.header-content {
+.header-content,
+.start-exploring {
   margin: 0 auto;
 }
 
@@ -76,4 +77,9 @@ header {
   padding: 0 3.5em;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
-} 
+}
+
+.start-exploring {
+  max-width: 150px;
+  padding-top: 10em;
+}
