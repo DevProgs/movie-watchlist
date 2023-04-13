@@ -16,16 +16,6 @@ img {
   width: 100%;
 }
 
-svg {
-  padding-left: 20px;
-}
-
-.container {
-  width: 90%;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
 header {
   height: 17vh;
   background-origin:padding-box;
@@ -36,23 +26,34 @@ header {
   color: white;
 }
 
-.flex {
-  display: flex;
-  height: inherit;
+.container {
+  width: 90%;
+  max-width: 800px;
+}
+
+.banner,
+.header-content,
+.search-div {
+  display: flex
+}
+
+.banner,
+.container,
+.header-content {
   margin: 0 auto;
+}
+
+.banner {
+  height: inherit;
 }
 
 .header-content {
-  display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  margin: 0 auto;
 }
 
-
 .search-div {
-  display: flex;
   margin-top: -25px;
   position: relative;
 }
