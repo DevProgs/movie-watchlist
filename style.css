@@ -61,6 +61,8 @@ header,
 .movie-watchlist {
   font-weight: 700;
   cursor: pointer;
+  text-decoration: none;
+  color: white;
 }
 
 .movie-watchlist:focus,
@@ -118,7 +120,16 @@ header,
   background:#8a8a8a;
 }
 
+.movies {
+  text-align: center;
+  padding-top: 10em;
+}
+
 .start-exploring {
   max-width: 9.375em;
-  padding-top: 10em;
+}
+
+.empty-list {
+  color: white;
+  padding-bottom: 1em;
 }
