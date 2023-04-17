@@ -26,7 +26,11 @@ header {
 }
 
 header,
-.search-btn {
+.search-btn,
+.add-movie-txt,
+.movie-watchlist,
+.empty-list,
+.empty-btn {
   color: #FFF;
 }
 
@@ -62,7 +66,6 @@ header,
   font-weight: 700;
   cursor: pointer;
   text-decoration: none;
-  color: white;
 }
 
 .movie-watchlist:focus,
@@ -131,21 +134,19 @@ header,
 
 
 .empty-list {
-  color: white;
   padding-bottom: 1em;
 }
 
-.empty-btn {
+.btn-container {
   display: flex;
-  align-items: center;
-  margin: 0 auto;
-  font-size: 14px;
-  background-color: transparent;
-  color: #FFF;
-  padding: 0, 3.5em;
+  justify-content: center;
 }
 
-.plus-icon {
-  max-width: 1.5em;
+.add-movie-txt {
+  margin-left: .625em;
+}
 
+.empty-btn {
+  background-color: transparent;
+  border: none;
 }
