@@ -123,15 +123,54 @@ header,
   background:#8a8a8a;
 }
 
-.movies {
+.watchlist {
   text-align: center;
   padding-top: 10em;
+}
+
+.movies {
+  padding-top: 2.625em;
+}
+
+.movie {
+  display: flex;
+  color: white;
+}
+
+.movie-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding-left: 10px;
+}
+
+.poster {
+  height: 150px;
+  width: 100px;
+}
+
+.title-container,
+.test-container {
+  display: flex;
+}
+
+.plus-icon {
+  max-width: 15px;
+}
+
+.star {
+  width: 15px;
+  height: 15px;
+  align-self: center;
+}
+
+.movie-rating{
+  align-self: center;
 }
 
 .start-exploring {
   max-width: 9.375em;
 }
-
 
 .empty-list {
   padding-bottom: 1em;
@@ -150,3 +189,4 @@ header,
   background-color: transparent;
   border: none;
 }
+
