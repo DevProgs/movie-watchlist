@@ -123,9 +123,22 @@ header,
   background:#8a8a8a;
 }
 
+.start-exploring, {
+
+}
+
 /* Movie search page styles */
 
 /* Section overflows at smaller screens. Make media query to make image/text smaller*/
+
+.start-exploring,
+.watchlist {
+  padding-top: 10em;
+}
+
+.start-exploring {
+  max-width: 9.375em;
+}
 
 .movies {
   padding-top: 1.25em;
@@ -144,7 +157,6 @@ header,
   justify-content: space-around;
   padding-left: 1.25em;
   max-width: 21.875em;
-  /* outline: 1px solid red; */
 }
 
 .poster {
@@ -201,11 +213,6 @@ header,
 
 .watchlist {
   text-align: center;
-  padding-top: 10em;
-}
-
-.start-exploring {
-  max-width: 9.375em;
 }
 
 .empty-list {
