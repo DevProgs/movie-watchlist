@@ -30,7 +30,7 @@ header,
 .add-movie-txt,
 .movie-watchlist,
 .empty-list,
-.empty-btn {
+.add-btn {
   color: #FFF;
 }
 
@@ -128,13 +128,14 @@ header,
 /* Section overflows at smaller screens. Make media query to make image/text smaller*/
 
 .movies {
-  padding-top: 2.625em;
+  padding-top: 1.25em;
 }
 
 .movie {
   display: flex;
   justify-content: center;
   color: white;
+  padding-top: 1.25em;
 }
 
 .movie-info {
@@ -143,11 +144,17 @@ header,
   justify-content: space-around;
   padding-left: 1.25em;
   max-width: 21.875em;
+  /* outline: 1px solid red; */
 }
 
 .poster {
   height: 150px;
   width: 100px;
+}
+
+.title-container h3,
+.star {
+  margin-right: .3125em;
 }
 
 .title-container,
@@ -173,7 +180,6 @@ header,
   max-width: 15px;
 }
 
-
 .star {
   align-self: center;
 }
@@ -184,6 +190,11 @@ header,
 
 .movie-description {
   width: 40ch;
+}
+
+.divider {
+  margin-top: 20px;
+  border: 1.5px solid #2C2C2C;
 }
 
 /* Watchlist page styles */
@@ -210,7 +221,7 @@ header,
   margin-left: .625em;
 }
 
-.empty-btn {
+.add-btn {
   background-color: transparent;
   border: none;
 }
