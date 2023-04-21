@@ -128,6 +128,14 @@ header,
 
 /* Section overflows at smaller screens. Make media query to make image/text smaller*/
 
+.error-msg {
+  max-width: 35ch;
+  color: white;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 7em;
+}
+
 .start-exploring,
 .watchlist {
   padding-top: 10em;

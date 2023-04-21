@@ -6,19 +6,27 @@ const searchMovie = document.querySelector('.search')
 const searchBtn = document.querySelector('.search-btn')
 const movieSection = document.querySelector('.movies');
 const exploreImage = document.querySelector('.start-exploring')
-// let searchedMovieHTML = ''
+const errorMSG = document.querySelector('.error-msg')
 const moviesArray = []
+
 
 const getSearchedMovie = () => {
   fetch(`http://www.omdbapi.com/?s=${searchMovie.value}&apikey=80010bb0`)
     .then(res => res.json())
-    .then(data => data.Search.forEach((movie) => {
-      getMovieID(movie.imdbID)
-    }));
+    .then(data => {
+      if (data.Response === "False") {
+        errorMSG.innerHTML = renderErrorHTML()
+      } else {
+        data.Search.forEach((movie) => {
+          getMovieID(movie.imdbID)
+        })
+      }
+    });
 }
 
 const getMovieID = (ID) => {
   exploreImage.style.display = 'none';
+  errorMSG.style.display = 'none'
   fetch(`http://www.omdbapi.com/?i=${ID}&apikey=80010bb0`)
     .then((res) => res.json())
     .then(
@@ -50,6 +58,13 @@ const getMovieID = (ID) => {
     `)
     );
 };
+
+const renderErrorHTML = () => {
+  exploreImage.style.display = 'none';
+  return (
+    '<h3 class="error-msg">Unable to find what you’re looking for. Please try another search.</h3>'
+  )
+}
 
 
 searchBtn.addEventListener('click', getSearchedMovie);
