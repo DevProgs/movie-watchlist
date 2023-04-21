@@ -219,6 +219,11 @@ header,
 .btn-container {
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+
+.add-btn {
+  cursor: pointer;
 }
 
 .add-movie-txt {
