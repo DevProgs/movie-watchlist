@@ -27,6 +27,7 @@ const getSearchedMovie = () => {
 const getMovieID = (ID) => {
   exploreImage.style.display = 'none';
   errorMSG.style.display = 'none'
+  movieSection.innerHTML = ''
   fetch(`http://www.omdbapi.com/?i=${ID}&apikey=80010bb0`)
     .then((res) => res.json())
     .then(
