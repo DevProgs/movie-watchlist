@@ -10,29 +10,40 @@ const errorMSG = document.querySelector('.error-msg')
 const moviesArray = []
 
 
-const getSearchedMovie = () => {
-  fetch(`http://www.omdbapi.com/?s=${searchMovie.value}&apikey=80010bb0`)
-    .then(res => res.json())
-    .then(data => {
+// const getSearchedMovie = () => {
+//   fetch(`http://www.omdbapi.com/?s=${searchMovie.value}&apikey=80010bb0`)
+//     .then(res => res.json())
+//     .then(data => {
+//       if (data.Response === "False") {
+//         errorMSG.innerHTML = renderErrorHTML()
+//       } else {
+//         data.Search.forEach((movie) => {
+//           getMovieID(movie.imdbID)
+//         })
+//       }
+//     });
+// }
+
+const getSearchedMovie = async () => {
+  const res = await fetch(`http://www.omdbapi.com/?s=${searchMovie.value}&apikey=80010bb0`)
+  const data = await res.json()
       if (data.Response === "False") {
         errorMSG.innerHTML = renderErrorHTML()
       } else {
         data.Search.forEach((movie) => {
           getMovieID(movie.imdbID)
         })
-      }
-    });
+    };
 }
 
-const getMovieID = (ID) => {
+const getMovieID = async (ID) => {
   exploreImage.style.display = 'none';
   errorMSG.style.display = 'none'
   movieSection.innerHTML = ''
-  fetch(`http://www.omdbapi.com/?i=${ID}&apikey=80010bb0`)
-    .then((res) => res.json())
-    .then(
-      (data) =>
-        (movieSection.innerHTML += `
+  const res = await fetch(`http://www.omdbapi.com/?i=${ID}&apikey=80010bb0`)
+  const data = await res.json()
+
+    movieSection.innerHTML += `
     <div class="movie">
       <img class="poster" src="${data.Poster}" alt="${data.Title}">
       <div class="movie-info">
@@ -45,7 +56,7 @@ const getMovieID = (ID) => {
             <p>${data.Runtime}</p>
             <p>${data.Genre}</p>
             <div class="watchlist-btn-container">
-              <button class="add-btn">
+              <button onclick="add('${data.Title}')" class="add-btn">
                 <img class="plus-icon" src="/images/plus.svg" alt="plus">
               </button>
               <p>Watchlist</p>
@@ -56,8 +67,7 @@ const getMovieID = (ID) => {
       </div>
       <div class="container divider"></div>
     </div>
-    `)
-    );
+    `
 };
 
 const renderErrorHTML = () => {
