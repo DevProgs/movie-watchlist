@@ -9,20 +9,12 @@ const exploreImage = document.querySelector('.start-exploring')
 const errorMSG = document.querySelector('.error-msg')
 const moviesArray = []
 
-
-// const getSearchedMovie = () => {
-//   fetch(`http://www.omdbapi.com/?s=${searchMovie.value}&apikey=80010bb0`)
-//     .then(res => res.json())
-//     .then(data => {
-//       if (data.Response === "False") {
-//         errorMSG.innerHTML = renderErrorHTML()
-//       } else {
-//         data.Search.forEach((movie) => {
-//           getMovieID(movie.imdbID)
-//         })
-//       }
-//     });
-// }
+const addToWatchlist = () => {
+  const wishlistBtns = document.querySelectorAll('.add-btn')
+  wishlistBtns.forEach((btn) => btn.addEventListener('click', () => {
+    console.log('click')
+  }))
+};
 
 const getSearchedMovie = async () => {
   const res = await fetch(`http://www.omdbapi.com/?s=${searchMovie.value}&apikey=80010bb0`)
@@ -56,7 +48,7 @@ const getMovieID = async (ID) => {
             <p>${data.Runtime}</p>
             <p>${data.Genre}</p>
             <div class="watchlist-btn-container">
-              <button onclick="add('${data.Title}')" class="add-btn">
+              <button class="add-btn">
                 <img class="plus-icon" src="/images/plus.svg" alt="plus">
               </button>
               <p>Watchlist</p>
@@ -68,7 +60,9 @@ const getMovieID = async (ID) => {
       <div class="container divider"></div>
     </div>
     `
+  addToWatchlist()
 };
+
 
 const renderErrorHTML = () => {
   exploreImage.style.display = 'none';
