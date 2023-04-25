@@ -5,13 +5,18 @@ const movieSection = document.querySelector('.movies');
 const exploreImage = document.querySelector('.start-exploring')
 const errorMSG = document.querySelector('.error-msg')
 const searchedMoviesArray = []
+let watchlistArray = JSON.parse(localStorage.getItem('watchlist') || '[]');
 
-
+console.log(watchlistArray)
 movieSection.addEventListener('click', (e) => {
   if (e.target.dataset.id) {
     const selectedMovie = searchedMoviesArray.filter(movie => movie.imdbID === e.target.dataset.id)[0]
-    console.log(selectedMovie)
+    if(!watchlistArray.includes(searchMovie)){
+      watchlistArray.push(selectedMovie)
+    }
+    localStorage.setItem('watchlist', JSON.stringify(watchlistArray));
   }
+  console.log(watchlistArray)
 });
 
 
@@ -59,7 +64,6 @@ const getMovieID = async (id) => {
       <div class="container divider"></div>
     </div>
     `;
-  // addToWatchlist(searchedMoviesArray);
 };
 
 
