@@ -7,11 +7,12 @@ const errorMSG = document.querySelector('.error-msg')
 const searchedMoviesArray = []
 
 
-document.addEventListener('click', (e) => {
-  if(e.target.dataset.id) {
-    console.log('clicked')
+movieSection.addEventListener('click', (e) => {
+  if (e.target.dataset.id) {
+    const selectedMovie = searchedMoviesArray.filter(movie => movie.imdbID === e.target.dataset.id)[0]
+    console.log(selectedMovie)
   }
-})
+});
 
 
 const getSearchedMovie = async () => {
@@ -32,7 +33,6 @@ const getMovieID = async (id) => {
   movieSection.innerHTML = ''
   const res = await fetch(`http://www.omdbapi.com/?i=${id}&apikey=80010bb0`)
   const data = await res.json()
-  console.log(id)
   searchedMoviesArray.push(data);
     movieSection.innerHTML += `
     <div class="movie">
