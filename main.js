@@ -1,20 +1,18 @@
-// let data = JSON.parse(localStorage.getItem("movie"))
-// console.log(data);
-// document.getElementById('app').innerHTML = `<img src=${data.Poster} alt="movie poster"/>`
 const movies = document.querySelector('.movies')
 const searchMovie = document.querySelector('.search')
 const searchBtn = document.querySelector('.search-btn')
 const movieSection = document.querySelector('.movies');
 const exploreImage = document.querySelector('.start-exploring')
 const errorMSG = document.querySelector('.error-msg')
-const moviesArray = []
+const searchedMoviesArray = []
 
-const addToWatchlist = () => {
-  const wishlistBtns = document.querySelectorAll('.add-btn')
-  wishlistBtns.forEach((btn) => btn.addEventListener('click', () => {
-    console.log('click')
-  }))
-};
+
+document.addEventListener('click', (e) => {
+  if(e.target.dataset.id) {
+    console.log('clicked')
+  }
+})
+
 
 const getSearchedMovie = async () => {
   const res = await fetch(`http://www.omdbapi.com/?s=${searchMovie.value}&apikey=80010bb0`)
@@ -28,13 +26,14 @@ const getSearchedMovie = async () => {
     };
 }
 
-const getMovieID = async (ID) => {
+const getMovieID = async (id) => {
   exploreImage.style.display = 'none';
   errorMSG.style.display = 'none'
   movieSection.innerHTML = ''
-  const res = await fetch(`http://www.omdbapi.com/?i=${ID}&apikey=80010bb0`)
+  const res = await fetch(`http://www.omdbapi.com/?i=${id}&apikey=80010bb0`)
   const data = await res.json()
-
+  console.log(id)
+  searchedMoviesArray.push(data);
     movieSection.innerHTML += `
     <div class="movie">
       <img class="poster" src="${data.Poster}" alt="${data.Title}">
@@ -48,8 +47,8 @@ const getMovieID = async (ID) => {
             <p>${data.Runtime}</p>
             <p>${data.Genre}</p>
             <div class="watchlist-btn-container">
-              <button class="add-btn">
-                <img class="plus-icon" src="/images/plus.svg" alt="plus">
+              <button data-id=${data.imdbID} class="add-btn">
+                <img class="plus-icon" src="/images/plus.svg" alt="plus"></img>
               </button>
               <p>Watchlist</p>
             </div>
@@ -59,8 +58,8 @@ const getMovieID = async (ID) => {
       </div>
       <div class="container divider"></div>
     </div>
-    `
-  addToWatchlist()
+    `;
+  // addToWatchlist(searchedMoviesArray);
 };
 
 

@@ -192,6 +192,10 @@ header,
   margin-left: 6px;
 }
 
+.plus-icon {
+  pointer-events: none;
+}
+
 .plus-icon,
 .star {
   max-width: 15px;
@@ -232,6 +236,7 @@ header,
 
 .add-btn {
   cursor: pointer;
+  z-index: 10;
 }
 
 .add-movie-txt {
