@@ -2,6 +2,15 @@ const watchlistSection = document.querySelector('.watchlist')
 const startExploring = document.querySelector('.start-exploring');
 let watchlistArray = JSON.parse(localStorage.getItem('watchlist') || '[]');
 
+  watchlistSection.addEventListener('click', (e) => {
+    if (e.target.dataset.id) {
+      watchlistArray = watchlistArray.filter(movie => movie.imdbID !== e.target.dataset.id)
+    }
+    localStorage.setItem('watchlist', JSON.stringify(watchlistArray))
+    renderWatchlist()
+  })
+
+
 const renderWatchlist = () => {
   watchlistSection.style.padding = '0'
   let watchlistHTML

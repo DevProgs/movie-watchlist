@@ -7,11 +7,12 @@ const errorMSG = document.querySelector('.error-msg')
 const searchedMoviesArray = []
 let watchlistArray = JSON.parse(localStorage.getItem('watchlist') || '[]');
 
+
 movieSection.addEventListener('click', (e) => {
   if (e.target.dataset.id) {
     const selectedMovie = searchedMoviesArray.filter(movie => movie.imdbID === e.target.dataset.id)[0]
-    if(!watchlistArray.includes(searchMovie)){
-      watchlistArray.push(selectedMovie)
+    if (!watchlistArray.includes(selectedMovie)) {
+      watchlistArray.push(selectedMovie);
     }
     localStorage.setItem('watchlist', JSON.stringify(watchlistArray));
   }
