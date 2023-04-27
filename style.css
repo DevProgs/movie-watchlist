@@ -93,6 +93,7 @@ header,
 }
 
 .search,
+.movie-description,
 .search::placeholder {
   color: #A5A5A5
 }
@@ -192,11 +193,13 @@ header,
   margin-left: 6px;
 }
 
-.plus-icon {
+.plus-icon,
+.remove-icon {
   pointer-events: none;
 }
 
 .plus-icon,
+.remove-icon,
 .star {
   max-width: 15px;
 }
@@ -211,6 +214,9 @@ header,
 
 .movie-description {
   width: 40ch;
+  font-size: .875rem;
+  font-weight: 400;
+  text-align: left;
 }
 
 .divider {
@@ -247,4 +253,6 @@ header,
   background-color: transparent;
   border: none;
 }
+
+
 
