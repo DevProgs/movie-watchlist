@@ -20,7 +20,7 @@ movieSection.addEventListener('click', (e) => {
 
 
 const getSearchedMovie = async () => {
-  const res = await fetch(`http://www.omdbapi.com/?s=${searchMovie.value}&apikey=80010bb0`)
+  const res = await fetch(`https://www.omdbapi.com/?s=${searchMovie.value}&apikey=80010bb0`)
   const data = await res.json()
       if (data.Response === "False") {
         errorMSG.innerHTML = renderErrorHTML()
