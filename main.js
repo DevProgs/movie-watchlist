@@ -35,7 +35,7 @@ const getMovieID = async (id) => {
   exploreImage.style.display = 'none';
   errorMSG.style.display = 'none'
   movieSection.innerHTML = ''
-  const res = await fetch(`http://www.omdbapi.com/?i=${id}&apikey=80010bb0`)
+  const res = await fetch(`https://www.omdbapi.com/?i=${id}&apikey=80010bb0`)
   const data = await res.json()
   searchedMoviesArray.push(data);
     movieSection.innerHTML += `
