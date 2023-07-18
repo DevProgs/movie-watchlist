@@ -38,7 +38,7 @@ const renderWatchlist = () => {
           <p class="movie-description">${Plot}</p>
         </div>
       </div>
-      <div class="container divider"></div>
+      <div class="container watchlist-divider"></div>
     </div>
     `;
   })

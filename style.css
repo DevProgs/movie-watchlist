@@ -186,6 +186,7 @@ header,
 }
 
 .genre-container {
+  margin: 1.25em 0;
   font-size: .75rem;
 }
 
@@ -220,8 +221,13 @@ header,
 }
 
 .divider {
-  margin-top: 20px;
   border: 1.5px solid #2C2C2C;
+}
+
+
+.divider,
+.watchlist-divider {
+  margin-top: 20px;
 }
 
 /* Watchlist page styles */
@@ -254,5 +260,8 @@ header,
   border: none;
 }
 
+.watchlist-divider {
+  border: 1.5px solid #E5E7EB;
+}
 
 
