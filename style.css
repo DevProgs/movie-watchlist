@@ -127,8 +127,6 @@ header,
 
 /* Movie search page styles */
 
-/* Section overflows at smaller screens. Make media query to make image/text smaller*/
-
 .error-msg {
   max-width: 35ch;
   color: white;
@@ -165,8 +163,8 @@ header,
 }
 
 .poster {
-  height: 250px;
-  width: 200px;
+  height: 150px;
+  width: 100px;
 }
 
 .title-container h3,
@@ -180,14 +178,13 @@ header,
   display: flex;
 }
 
+
 .genre-container {
+  margin: 2em 0;
+  font-size: .75rem;
   justify-content: space-between;
 }
 
-.genre-container {
-  margin: 1.25em 0;
-  font-size: .75rem;
-}
 
 .watchlist-btn-container p {
   margin-left: 6px;
@@ -263,5 +260,3 @@ header,
 .watchlist-divider {
   border: 1.5px solid #E5E7EB;
 }
-
-
