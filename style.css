@@ -137,8 +137,7 @@ header,
   padding-top: 7em;
 }
 
-.start-exploring,
-.watchlist {
+.start-exploring {
   padding-top: 10em;
 }
 
@@ -166,8 +165,8 @@ header,
 }
 
 .poster {
-  height: 150px;
-  width: 100px;
+  height: 250px;
+  width: 200px;
 }
 
 .title-container h3,
@@ -237,6 +236,7 @@ header,
 }
 
 .empty-list {
+  padding-top: 10em;
   padding-bottom: 1em;
 }
 
