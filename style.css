@@ -260,3 +260,18 @@ header,
 .watchlist-divider {
   border: 1.5px solid #E5E7EB;
 }
+
+@media (max-width: 540px) {
+
+  .movie {
+    display: block;
+  }
+
+  .search-btn {
+    padding: 0 1.25em;
+  }
+  
+ .poster {
+  display: none;
+ }
+}
