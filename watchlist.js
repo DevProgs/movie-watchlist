@@ -12,7 +12,7 @@ let watchlistArray = JSON.parse(localStorage.getItem('watchlist') || '[]');
 
 
 const renderWatchlist = () => {
-  let watchlistHTML
+  let watchlistHTML = ''
   if (watchlistArray.length > 0) {
     watchlistSection.style.padding = '0'
     watchlistArray.forEach((movie) => {
